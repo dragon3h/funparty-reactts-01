@@ -8,6 +8,11 @@
       <option name="FORCE_QUOTE_STYlE" value="true" />
       <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
     </JSCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+    </TypeScriptCodeStyleSettings>
     <codeStyleSettings language="CSS">
       <arrangement>
         <rules>
@@ -40,7 +45,6 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="TypeScript">
-      <option name="SPACE_AROUND_EQUALITY_OPERATORS" value="false" />
       <option name="SPACE_BEFORE_COLON" value="false" />
       <option name="SPACE_AFTER_COLON" value="false" />
       <indentOptions>
