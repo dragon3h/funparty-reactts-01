@@ -2,31 +2,57 @@
 
 exports[`renders learn react link 1`] = `
 <div
-  className="App"
+  className="container"
 >
-  <header
-    className="App-header"
+  <div
+    className="login"
   >
-    <img
-      alt="logo"
-      className="App-logo"
-      src="logo.svg"
-    />
-    <p>
-      Edit 
-      <code>
-        src/App.tsx
-      </code>
-       and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+    <h1>
+      Login
+    </h1>
+    <form
+      onSubmit={[Function]}
     >
-      Learn React
-    </a>
-  </header>
+      <div
+        className="input-group"
+      >
+        <input
+          className="form-input"
+          name="email"
+          onChange={[Function]}
+          required={true}
+          type="email"
+          value=""
+        />
+        <label
+          className=" form-input__label"
+        >
+          Email
+        </label>
+      </div>
+      <div
+        className="input-group"
+      >
+        <input
+          className="form-input"
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+        <label
+          className=" form-input__label"
+        >
+          Password
+        </label>
+      </div>
+      <button
+        className="custom-button"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
 </div>
 `;

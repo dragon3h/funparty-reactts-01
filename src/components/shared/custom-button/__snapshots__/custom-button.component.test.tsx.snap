@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomButton component renders correctly 1`] = `
+<button
+  className="custom-button"
+  type="submit"
+>
+  Login
+</button>
+`;
