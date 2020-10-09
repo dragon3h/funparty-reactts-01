@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput for email component renders correctly 1`] = `
+<div
+  className="input-group"
+>
+  <input
+    className="form-input"
+    name="Email"
+    onChange={[MockFunction]}
+    required={true}
+    type="email"
+    value=""
+  />
+  <label
+    className=" form-input__label"
+  >
+    Email
+  </label>
+</div>
+`;
