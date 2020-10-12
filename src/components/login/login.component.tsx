@@ -53,7 +53,7 @@ class Login extends React.Component<LoginProps, LoginState> {
     return (
         <div className="login">
           <h1>Login</h1>
-          <form onSubmit={this.handleSubmit}>
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <FormInput handleChange={this.handleChange} label={'Email'} name="email" value={this.state.email}
                        attrType={'email'} required/>
             <FormInput handleChange={this.handleChange} label={'Password'} name="password" value={this.state.password}
