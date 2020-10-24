@@ -1,24 +1,25 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import './App.scss';
 import Login from '../login/login.component';
 import Home from '../home/home.component';
+import { UserLogin } from '../../redux/user/types';
 
-type AppProps = {};
+type AppProps = {
+  currentUser: UserLogin
+};
 
 type AppState = {
   isAuth: boolean
 };
 
 class App extends React.Component<AppProps, AppState> {
-  state = {
-    isAuth: false
-  };
   
   render() {
     let app;
-    if (this.state.isAuth) {
+    if (this.props.currentUser) {
       app = (
           <Home/>
       );
@@ -35,4 +36,10 @@ class App extends React.Component<AppProps, AppState> {
   }
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    currentUser: state.user
+  };
+};
+
+export default connect(mapStateToProps)(App);

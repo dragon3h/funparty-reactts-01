@@ -1,47 +1,51 @@
 import React from 'react';
 import _ from 'lodash';
+import {connect, ConnectedProps} from 'react-redux';
 
 import './login.styles.scss';
 import FormInput from '../shared/form-input/form-input.component';
 import CustomBtn from '../shared/custom-button/custom-button.component';
+import {UserActionConstTypes} from '../../redux/user/user.types';
+import {SetCurrentUser} from '../../redux/user/user.actions';
+import {UserLogin, UserActionTypes} from '../../redux/user/types';
 import users from '../assets/user.json';
 
-type LoginProps = {};
+type UserLoginState = {
+  email: string
+  password: string
+}
 
-type LoginState = {
-  email: string,
-  password: string,
-  isAuth: boolean,
+const mapDispatchToProps = {
+  setCurrentUser: SetCurrentUser
 };
 
-class Login extends React.Component<LoginProps, LoginState> {
-  state = {
+const connector = connect(null, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+type LoginProps = PropsFromRedux;
+
+class Login extends React.Component<LoginProps, UserLoginState> {
+  state: UserLoginState = {
     email: '',
     password: '',
-    isAuth: false
   };
   
   handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     const email = this.state.email;
     const pass = this.state.password;
+    const {setCurrentUser} = this.props;
+    const currentUser = {
+      email: email,
+      password: pass
+    };
     
-    _.each(users, (user: { id: number, email: string, password: string }) => {
-      if (user.email === email && user.password === pass) {
-        this.setState((state) => {
-          const result = {
-            ...state,
-            isAuth: true
-          }
-          return result;
-        });
-      }
-    });
+    setCurrentUser(currentUser);
   };
   
-  handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const {name, value} = event.currentTarget;
-    this.setState((state) => {
+    this.setState((state: UserLogin) => {
       return {
         email: name === 'email' ? value:state.email,
         password: name === 'password' ? value:state.password
@@ -65,4 +69,4 @@ class Login extends React.Component<LoginProps, LoginState> {
   }
 }
 
-export default Login;
+export default connector(Login);
