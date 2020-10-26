@@ -11,6 +11,7 @@ exports[`renders learn react link 1`] = `
       Login
     </h1>
     <form
+      className="login-form"
       onSubmit={[Function]}
     >
       <div

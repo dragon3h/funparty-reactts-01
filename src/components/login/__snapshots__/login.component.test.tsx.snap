@@ -8,6 +8,7 @@ exports[`renders Login component 1`] = `
     Login
   </h1>
   <form
+    className="login-form"
     onSubmit={[Function]}
   >
     <div
