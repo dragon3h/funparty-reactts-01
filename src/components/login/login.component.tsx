@@ -2,8 +2,8 @@ import React from 'react';
 import {connect, ConnectedProps} from 'react-redux';
 
 import './login.styles.scss';
-import FormInput from '../shared/form-input/form-input.component';
-import CustomBtn from '../shared/custom-button/custom-button.component';
+import FormInput from '../shared/components/form-input/form-input.component';
+import CustomBtn from '../shared/components/custom-button/custom-button.component';
 import {SetCurrentUser} from '../../redux/user/user.actions';
 import {UserLogin} from '../../redux/user/types';
 

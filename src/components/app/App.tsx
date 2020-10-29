@@ -3,9 +3,11 @@ import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import './App.scss';
+import Page404 from '../404-page/404-page.component';
 import Login from '../login/login.component';
+import MainNavigation from '../../components/shared/components/navigation/main-navigation/main-navigation.component';
 import Home from '../home/home.component';
-import { UserLogin } from '../../redux/user/types';
+import {UserLogin} from '../../redux/user/types';
 
 type AppProps = {
   currentUser: UserLogin
@@ -18,21 +20,24 @@ type AppState = {
 class App extends React.Component<AppProps, AppState> {
   
   render() {
-    let app;
-    if (this.props.currentUser) {
-      app = (
-          <Home/>
+    const isLoggedIn = this.props.currentUser;
+    if (isLoggedIn) {
+      return (
+          <React.Fragment>
+            <MainNavigation/>
+            <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route path="/" component={Page404}/>
+            </Switch>
+          </React.Fragment>
       );
     } else {
-      app = (
-          <Login/>
+      return (
+          <Switch>
+            <Route path="/" component={Login}/>
+          </Switch>
       );
     }
-    return (
-        <div className="container">
-          {app}
-        </div>
-    );
   }
 }
 
