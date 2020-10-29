@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App component without crashes 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="login"
+  >
+    <h1>
+      Login
+    </h1>
+    <form
+      className="login-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-group"
+      >
+        <input
+          autoComplete="username"
+          className="form-input"
+          name="email"
+          onChange={[Function]}
+          required={true}
+          type="email"
+          value=""
+        />
+        <label
+          className=" form-input__label"
+        >
+          Email
+        </label>
+      </div>
+      <div
+        className="input-group"
+      >
+        <input
+          autoComplete="current-password"
+          className="form-input"
+          name="password"
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+        <label
+          className=" form-input__label"
+        >
+          Password
+        </label>
+      </div>
+      <button
+        className="custom-button"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+`;

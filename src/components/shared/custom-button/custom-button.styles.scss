@@ -1,0 +1,23 @@
+@import '../../../styles/_colors.scss';
+
+.custom-button {
+  min-width: 6rem;
+  width: auto;
+  height: 3rem;
+  border: none;
+  padding: 0 2.2rem;
+  letter-spacing: 0.032rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  background-color: $primary-color;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: darken($primary-color, 20%);
+    border: 1px solid black;
+  }
+}

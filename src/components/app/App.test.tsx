@@ -1,9 +1,15 @@
 import React from 'react';
 import * as renderer from 'react-test-renderer';
+
+import Root from '../../root';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  const mainScreen = renderer.create(<App />).toJSON();
+test('renders App component without crashes', () => {
+  const mainScreen = renderer.create(
+      <Root>
+        <App />
+      </Root>).toJSON();
 
   expect(mainScreen).toMatchSnapshot();
 });
