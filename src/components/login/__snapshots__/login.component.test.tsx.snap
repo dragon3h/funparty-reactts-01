@@ -15,6 +15,7 @@ exports[`renders Login component 1`] = `
       className="input-group"
     >
       <input
+        autoComplete="username"
         className="form-input"
         name="email"
         onChange={[Function]}
@@ -32,9 +33,11 @@ exports[`renders Login component 1`] = `
       className="input-group"
     >
       <input
+        autoComplete="current-password"
         className="form-input"
         name="password"
         onChange={[Function]}
+        required={true}
         type="password"
         value=""
       />

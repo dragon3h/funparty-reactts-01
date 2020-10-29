@@ -5,7 +5,7 @@ import Root from '../../root';
 
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders App component without crashes', () => {
   const mainScreen = renderer.create(
       <Root>
         <App />

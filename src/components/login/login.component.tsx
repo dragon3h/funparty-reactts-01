@@ -47,8 +47,8 @@ class Login extends React.Component<LoginProps, UserLoginState> {
     const {name, value} = event.currentTarget;
     this.setState((state: UserLogin) => {
       return {
-        email: name === 'email' ? value:state.email,
-        password: name === 'password' ? value:state.password
+        email: name === 'email' ? value : state.email,
+        password: name === 'password' ? value : state.password
       };
     });
   };
@@ -58,10 +58,21 @@ class Login extends React.Component<LoginProps, UserLoginState> {
         <div className="login">
           <h1>Login</h1>
           <form className="login-form" onSubmit={this.handleSubmit}>
-            <FormInput handleChange={this.handleChange} label={'Email'} name="email" value={this.state.email}
-                       attrType={'email'} required/>
-            <FormInput handleChange={this.handleChange} label={'Password'} name="password" value={this.state.password}
-                       attrType={'password'}/>
+            <FormInput handleChange={this.handleChange}
+                       label={'Email'}
+                       name="email"
+                       value={this.state.email}
+                       attrType={'email'}
+                       autoComplete="username"
+                       required/>
+            <FormInput handleChange={this.handleChange}
+                       label={'Password'}
+                       name="password"
+                       value={this.state.password}
+                       attrType={'password'}
+                       autoComplete="current-password"
+                       required/>
+                       
             <CustomBtn type="submit">Login</CustomBtn>
           </form>
         </div>

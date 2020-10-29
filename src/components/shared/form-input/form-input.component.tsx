@@ -8,19 +8,25 @@ type FormInputProps = {
   value: string,
   name: string,
   attrType: string,
-  required?: boolean
+  required?: boolean,
+  autoComplete?: string
 };
 
 const FormInput = ({handleChange, label, value, name, attrType, ...otherProps}: FormInputProps) => {
   return (
       <div className="input-group">
-        <input className="form-input" type={attrType} value={value} name={name} onChange={handleChange} {...otherProps}/>
+        <input className="form-input"
+               type={attrType}
+               value={value}
+               name={name}
+               onChange={handleChange}
+               {...otherProps}/>
         {
           label ? (
-              <label className={`${(value && value.length) ? "shrink" : ''} ${'form-input__label'}`}>
+              <label className={`${(value && value.length) ? 'shrink':''} ${'form-input__label'}`}>
                 {label}
               </label>
-          ) : null
+          ):null
         }
       </div>
   );
