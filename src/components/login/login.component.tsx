@@ -1,14 +1,11 @@
 import React from 'react';
-import _ from 'lodash';
 import {connect, ConnectedProps} from 'react-redux';
 
 import './login.styles.scss';
 import FormInput from '../shared/form-input/form-input.component';
 import CustomBtn from '../shared/custom-button/custom-button.component';
-import {UserActionConstTypes} from '../../redux/user/user.types';
 import {SetCurrentUser} from '../../redux/user/user.actions';
-import {UserLogin, UserActionTypes} from '../../redux/user/types';
-import users from '../assets/user.json';
+import {UserLogin} from '../../redux/user/types';
 
 type UserLoginState = {
   email: string

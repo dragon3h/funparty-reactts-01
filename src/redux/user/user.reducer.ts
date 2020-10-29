@@ -1,5 +1,5 @@
 import {UserActionConstTypes} from './user.types';
-import { User, UserState, UserActionTypes } from './types';
+import { User, UserActionTypes } from './types';
 import { findUserByEmail } from './user.utils';
 
 const INITIAL_STATE = null;
