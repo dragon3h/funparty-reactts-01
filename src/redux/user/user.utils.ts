@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import users from '../../components/assets/user.json';
+import users from '../../assets/user.json';
 import {User} from '../../redux/user/types';
 
 type UserData = {
