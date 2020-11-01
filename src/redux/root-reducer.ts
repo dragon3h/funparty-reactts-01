@@ -1,10 +1,17 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from '@reduxjs/toolkit';
+import {persistReducer} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import UserReducer from './user/user.reducer';
 
-export const rootReducer = combineReducers({
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const rootReducer = combineReducers({
   user: UserReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
-
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
